@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>language switch using JavaScript</title>
+	<link rel="stylesheet" href="./main.css">
+</head>
+<body>
+	<div class="container">
+		<h2 class="welcome">Welcome to OFS</h2>
+		<div class="langWrap">
+			<a href="#" language='english' class="active">EN</a>
+			<a href="#" language='tamil'>தமிழ்</a>
+			<a href="#" language='japanese'>あ</a>
+		</div>
+
+		<div class="content">
+			<h2 class="title">OFS Learning</h2>
+			<div>
+				<img class="image" src = "imgs/img1.png">
+			</div>
+			<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi veritatis, dicta nesciunt repellat eius labore ea accusantium? Ex nemo vel dolorem cum neque. Corrupti laudantium repellendus maxime reiciendis, voluptate modi optio sed qui eaque rerum fugiat accusantium, quis sequi eum. Quisquam reiciendis earum voluptatibus, provident ex error debitis dolorem pariatur explicabo quae deserunt aut non sequi facere! Velit sunt incidunt accusantium saepe hic debitis totam, laudantium ab culpa optio dolores nam quo fugiat neque nostrum enim officia quam labore obcaecati?</p>
+		</div>
+	</div>
+	<script>
+		const langEl = document.querySelector('.langWrap');
+		const link = document.querySelectorAll('a');
+		const welcome = document.querySelector(".welcome");
+		const titleEl = document.querySelector('.title');
+		const descrEl = document.querySelector('.description');
+		const img = document.querySelector('.image');
+
+		link.forEach(el => {
+			el.addEventListener('click', () => {
+				langEl.querySelector('.active').classList.remove('active');
+				el.classList.add('active');
+
+				const attr = el.getAttribute('language');
+
+				img.src = data[attr].imgAddr;
+				welcome.textContent = data[attr].header;
+				titleEl.textContent = data[attr].title;
+				descrEl.textContent = data[attr].description;
+			});
+		});
+		var data = {
+			  "english": 
+			  {
+				"header":"Welcome to OFS",
+			    "title": "OFS Learning",
+			    "description": 
+				    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non adipisci eligendi repellat ad dolor veritatis itaque sequi minus iste, doloremque. Officiis non eaque atque excepturi repudiandae nulla eos eligendi magni molestiae eius distinctio, voluptas pariatur incidunt et culpa inventore aspernatur recusandae nihil asperiores, vitae, maiores laborum quasi perspiciatis natus dignissimos! Accusantium aliquam nostrum impedit dignissimos iste, iure inventore! Sapiente, labore earum ut dicta ducimus asperiores laudantium natus officiis, quisquam placeat aspernatur voluptatum aut voluptates tenetur quos magni fugit quia. Fugiat.",
+				"imgAddr": 'img1.png'
+				
+			  },
+			  "tamil": 
+			  {
+				"header":"OFS க்கு வரவேற்கிறோம்",
+			    "title": "கற்றல்",
+			    "description": 
+				    "வலியே வலி அதிகம் வலியை அடைய வேண்டாம் என்பதைத் தேர்ந்தெடுப்பது உண்மைக்குத் தள்ளுகிறது, எனவே இதைப் பின்பற்றுவதற்கான வாய்ப்புகள் குறைவு, மேலும் வலி. அவர்கள் இந்தக் கடமைகளை ஏற்கக்கூடாது, அவற்றைத் தேர்ந்தெடுப்பதில் பெரும் எரிச்சல் என்ற வேறுபாடு இல்லாமல் நிராகரிக்கப்பட வேண்டும், இன்பம் என்பது விளைவான வீழ்ச்சி, மற்றும் கண்டுபிடிப்பாளரின் தவறு, நீங்கள் பிறந்ததைப் போல கடுமையான, வாழ்க்கை மற்றும் பெரிய உழைப்பு எதையும் ஏற்காததால் அவர்களை நிராகரிக்கிறது. சந்திக்க தகுதியானவர்! இது எங்கள் மிகவும் தகுதியான குற்றம் சாட்டுபவர்களில் சிலரைத் தடுக்கிறது. முதியவரின் முட்கள் நிறைந்த கடமைகளைப் போற்றுவதில் குறிப்பிடப்பட்டவர்களின் கடின உழைப்பை நாம் எண்ணும்போது, ​​ஞானமுள்ள மனிதன், அவர் முக்கியத்துவம் வாய்ந்தவர் என்பதால், அவர் தவிர்க்க வேண்டிய இன்பங்கள் அல்லது இன்பங்களில் எந்த இன்பத்தையும் நிராகரிக்கிறார். அவன் ஓடிப்போகட்டும்.",
+					"imgAddr": 'img2.png'
+			  },
+			  "japanese": 
+			  {
+				"header" : "OFSへようこそ",
+			    "title": "学習の",
+			    "description": 
+				    "ﾂつｨﾂ知ﾂづｧﾂつｹﾂ-ﾂ新ﾂ陳ﾂ湘ｮﾂ陛ｱ これらの苦痛から真実の苦痛に選ぶために得てはいけない、従ってより少しにこの苦痛に従ってはいけない。 サービスではないと、彼の区別の大きな不快感から選択するそれらの否認を歓迎しない、結果として生じた事件の喜びと障害エクスプローラが受け入 このことについて私たちの下駄のいくつかを非難,右エクスプローラ! 的に仕事をしていまasperioresリストの生まれのサービスをつけてください編集喜びや楽しみの開催なども走りました。 走れ。.",
+				"imgAddr": 'img3.png'
+			  }
+			}
+	
+	</script>
+</body>
+</html>
