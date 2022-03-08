@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="mainHeader" class="hello">Wlecome to DOM Element</h1>
+    <p id="para" class="hello">
+        In capturing the outer most element's event is handled first and then the inner: the  element's click event will be handled first, then the  element's click event.
+    </p>
+    <p id="para2" class="hello">
+        In capturing the outer most element's event is handled first and then the inner: the  element's click event will be handled first, then the  element's click event.
+    </p>
+
+    <div id="parent">
+        I am div 
+        <p id="child">I am inside div</p>
+    </div>
+</body>
+<script>
+    let header = document.getElementById('mainHeader');
+    console.log(header);
+    let tagName = document.getElementsByTagName('p');
+    console.log(tagName,tagName[1]);
+
+    let qs = document.querySelector('#para');
+    console.log(qs);
+
+    let className = document.getElementsByClassName('hello');
+    console.log(className);
+
+
+
+    //  add extra divs
+
+    let innerDiv = document.createElement('p');
+    innerDiv.textContent = "Flexi Tours is a leading travel company in India since 2000, which provides best deals on booking Hotels, Flights & Tour Packages at the best price.";
+    innerDiv.setAttribute(id,"innerDiv");
+    innerDiv.style.color = "red";
+    qs.append(innerDiv);
+
+    // Event listeners 
+    header.addEventListener('mouseover',()=>{
+        header.style.color = "yellow";
+    });
+    
+    qs.addEventListener('click',() =>{
+        let newElemt = document.createElement('img');
+        newElemt.setAttribute(src,'ball.png');
+        qs.append(newElemt);
+    })
+    
+    // Event propagation 
+    let parent = document.getElementById('parent');
+    let child = document.getElementById('child');
+    parent.style.border = "1px solid black";
+
+    parent.addEventListener('click', () =>{
+        // parent.innerHTML = "I am first clicked";
+        parent.style.color = "red";
+        parent.style.fontSize = "32px";
+    },true);
+    child.addEventListener('click',()=>{
+        child.style.color = "blue";
+    })
+</script>
+</html>
