@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>OFS Layout</title>
+        <link rel = "icon" href="./favicon.png">
+        <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                }
+
+                li {
+                display: inline;
+                }
+                .display-box{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+                .header-text{
+                    font-size: 24px;
+                    display: flex;
+                    flex-direction: row-reverse;
+                    border-bottom: 1px solid black;
+                }
+                .list-nav{
+                    display: flex;
+                    flex-direction: row;
+                    margin-right: 10px;
+                    justify-content: flex-end;
+                }
+                .list-items{
+                    margin-right: 10px;
+                }
+                .main-doc{
+                    border: 1px solid;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin: 30px;
+                    height:500px;
+                }
+                .section-div{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 20px;
+                    width: 1000px;
+                }
+                .aside-lists{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    width: 209px;
+                    margin: 20px;
+                    box-sizing: border-box;
+                }
+                .aside-cls{
+                    border: 1px solid;
+                    display: flex;
+                }
+        </style>
+    </head>
+    <body>
+        <div class="display-box">
+            <header class="header-text"> 
+                OFS Project Enrollment
+            </header>
+            <nav>
+                <ul class="list-nav">
+                    <li class="list-items">Home</li>
+                  <li class="list-items">  <a href="enroll.html">Enroll</a> </li>
+                    <li class="list-items">Contact</li>
+                </ul>
+            </nav>
+        
+            <main class="main-doc">
+                <div class="section-div">
+                    <article> OFS Projects</article>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <section> 
+                    <div> Salesforce Projects</div>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </section>
+                <section>
+                    <div > PEGA Projects</div>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </section>
+                </div>
+                
+                <aside>
+                    <ul class="aside-lists">
+                        <li>Namba</li>
+                        <li>Iniapro</li>
+                        <li>Nalan</li>
+                    </ul>
+                </aside>
+            </main>
+            <footer>
+                Copyrights at OFS
+            </footer>
+        </div>
+       
+    </body>
+</html>
